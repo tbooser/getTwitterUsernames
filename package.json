@@ -1,5 +1,5 @@
 {
-  "name": "twitterapp",
+  "name": "getTwitterUsernames",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tbooser/twitterApp.git"
+    "url": "git+https://github.com/tbooser/getTwitterUsernames.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tbooser/twitterApp/issues"
+    "url": "https://github.com/tbooser/getTwitterUsernames/issues"
   },
-  "homepage": "https://github.com/tbooser/twitterApp#readme",
+  "homepage": "https://github.com/tbooser/getTwitterUsernames#readme",
   "dependencies": {
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-class-properties": "^6.8.0",
@@ -38,3 +38,5 @@
     "html-webpack-plugin": "^2.17.0"
   }
 }
+
+
