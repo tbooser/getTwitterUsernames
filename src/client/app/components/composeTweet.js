@@ -16,24 +16,37 @@ getInitialState: function(){
 }, 
 
 handleChange: function(e){
-		
-	var promise = Model.getUserInfo(e.target.value)
-	promise.then( (response) => {
-			this.setState({
-				userInfo: response
+	
+	if( ( e.target.value ).indexOf('@') === -1 ) { return false } 
+	
+	
+
+
+
+
+	else if ( ( e.target.value ).indexOf('@') > -1 ){
+	
+		var atIndex = (e.target.value).indexOf('@')	
+
+		var newTargetValue = (e.target.value).substr(atIndex + 1, e.target.value.length)
+		console.log('newTargetValue', atIndex)
+		var promise = Model.getUserInfo(newTargetValue)
+	
+		promise.then( (response) => {
+				this.setState({
+					userInfo: response
+				})
 			})
 
-			})
-	
+			}
+
 	},
 
 
 render: function() {
-	var userInformation = this.state.userInfo;
-	console.log('THIS.STATE: ', this.state.userInfo)
 	function mapInfo (item) {return item.name}
-	if(userInformation !== null && ){
-		document.getElementById('Results').innerHTML = userInformation.map(mapInfo) }
+	if( this.state.userInfo !== null ){
+		document.getElementById('Results').innerHTML = this.state.userInfo.map(mapInfo) }
 	    
 	    return (
 	      <div>
@@ -53,20 +66,3 @@ module.exports = ComposeTweet;
 
 
 
-
-
-// export default class ComposeTweet extends React.Component {
-//  render() { 
-//   return <div>
-
-//   	<div onClick={this._handleClick}>Hello, world.</div>
-//   	<input></input>
-
-//   	</div>;
-//  }
-//  _handleClick() {
-//   console.log('HELLO');
-//  }
-
-
-// }
