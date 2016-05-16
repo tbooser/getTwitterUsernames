@@ -1,14 +1,4 @@
-// require('./request-helpers.js'); // Headers
-
-
-window.requestHeaders = {
-  "access-control-allow-origin": "*",
-  "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
-  "access-control-allow-headers": "content-type, accept",
-  "access-control-max-age": 10,
-  'Content-Type': "application/json"
-};
-
+require('../request-helpers.js'); // Headers
 
 
 
@@ -31,12 +21,12 @@ let dataStore = {};
 
 
 exports.getUserInfo = function(searchTerm) {
-  searchTerm = {'q':'bjorn bakeman'}
-  console.log('THIS IS THE FRONT END REQUEST BODY: ', searchTerm)
+  var formattedSearch = {'q': searchTerm}
+  console.log('THIS IS THE FRONT END REQUEST BODY: ', formattedSearch)
   return fetch('lookup/', {
     method: 'POST',
     headers: requestHeaders,
-    body: JSON.stringify(searchTerm)
+    body: JSON.stringify(formattedSearch)
   }).then(function(searchResult){
   	console.log('BROWSER RESPONSE: ', searchResult)
     return searchResult.json()
@@ -53,4 +43,5 @@ exports.getUserInfo = function(searchTerm) {
 exports.checkDataStore = function(){
    console.log('DATA STORE: ', dataStore)
 }
+
 
