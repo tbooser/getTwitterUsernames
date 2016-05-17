@@ -1,4 +1,4 @@
-require('../request-helpers.js'); // Headers
+require('./request-helpers.js'); // Headers
 
 
 exports.getUserInfo = function(searchTerm) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import ComposeTweet from './components/composeTweet.js';
+import UserView from './components/userView.js'
 
 export default class App extends React.Component {
 
@@ -8,7 +8,7 @@ export default class App extends React.Component {
   render () {
     return  ( 
 		<div>
- 		  <ComposeTweet />
+ 		  <UserView />
 		</div>
 	)	
   }
@@ -16,3 +16,5 @@ export default class App extends React.Component {
 
 render(<App/>, document.getElementById('app'));
 
+// import ComposeTweet from './components/composeTweet.js';
+// // <ComposeTweet />
