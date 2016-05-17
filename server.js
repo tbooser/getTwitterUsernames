@@ -3,9 +3,6 @@ var Path = require('path');
 var routes = express.Router();
 
 
-
-
-
 //Route to index.html
 var assetFolder = Path.resolve(__dirname, './src/client/');
   routes.use(express.static(assetFolder));
@@ -18,21 +15,14 @@ if (process.env.NODE_ENV !== 'test') {
 
 
 
+var Twitter = require('twitter-node-client').Twitter;
 
-  var Twitter = require('twitter-node-client').Twitter;
-
-  var twitter = new Twitter(config);
-
-
-
-
-
+var twitter = new Twitter(config);
 
 
 
 
 routes.post('/lookup', function(req, res){
-
 
   var error = function (err, response, body) {
         console.log('ERROR ', err);   '[%s]'
@@ -43,21 +33,10 @@ routes.post('/lookup', function(req, res){
         res.send(JSON.parse(data))
     };
 
-
-
-  console.log('REQUEST BODY: ', req.body)
-
-
-
   return twitter.getCustomApiCall('/users/search.json',  req.body, error, success)
   
 
-    })
-
-
-
-
-
+  })
 
 
 

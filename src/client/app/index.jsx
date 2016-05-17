@@ -16,5 +16,3 @@ export default class App extends React.Component {
 
 render(<App/>, document.getElementById('app'));
 
-// import ComposeTweet from './components/composeTweet.js';
-// // <ComposeTweet />

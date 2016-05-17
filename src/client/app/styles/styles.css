@@ -18,15 +18,32 @@
 	font-family: 'Helvetica Neue'
 }
 
+#SingleUserDiv {
+	width: 40%;
+	margin: 0 auto;
+	display: block;
+}
+
 .TweetyBird {
 	width: 3%;
 	height: 4%;
 }
 
 .UserImage {
-	border: .5px solid black;
+	background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
-.UserName {
+.UserScreenName {
+	display: inline;
 	color: #9E9E98;
+}
+
+.display_box_hover, .display_box:hover
+{
+  background:#3b5998;
+  color:#FFFFFF;
 }
