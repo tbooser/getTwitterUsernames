@@ -2,7 +2,6 @@ var express = require('express');
 var Path = require('path');
 var routes = express.Router();
 
-
 //Route to index.html
 var assetFolder = Path.resolve(__dirname, './src/client/');
   routes.use(express.static(assetFolder));
