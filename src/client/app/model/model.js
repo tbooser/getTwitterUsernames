@@ -3,7 +3,7 @@ require('../request-helpers.js'); // Headers
 
 exports.getUserInfo = function(searchTerm) {
   
-  var formattedSearch = {'q': searchTerm}
+  var formattedSearch = { 'q': searchTerm }
   
   console.log('Request body ---->  ', formattedSearch)
   

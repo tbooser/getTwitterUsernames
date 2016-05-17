@@ -1,0 +1,33 @@
+/*.Application {
+	background-color: #00aced;
+}
+*/
+
+#SearchInput {
+	text-align: center;
+	display: block;
+	width: 20%;
+	height: 20%;
+	margin: 0 auto;
+}
+
+#Results {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	width: auto;
+	font-family: 'Helvetica Neue'
+}
+
+.TweetyBird {
+	width: 3%;
+	height: 4%;
+}
+
+.UserImage {
+	border: .5px solid black;
+}
+
+.UserName {
+	color: #9E9E98;
+}

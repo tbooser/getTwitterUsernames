@@ -23,14 +23,23 @@ var config = {
     filename: 'bundle.js'
   },
   
+
   module : {
     loaders : [
+
       {
         test : /\.jsx?/,
         exclude: /node_modules/,
         include : APP_DIR,
         loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
-      }
+      },
+      
+
+        { test: /\.scss$/, loader: "style!css!sass!"},
+       { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.png$/, loader: "url-loader?limit=100000" },
+      { test: /\.jpg$/, loader: "file-loader" },
+
     ]
   },
 

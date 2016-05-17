@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 var Model = require('../model/model.js');
-
+require("../styles/styles.css");
 
 
 
@@ -18,7 +18,6 @@ getInitialState: function(){
 
 handleChange: function(e){
 	
-
 	var atIndex = ( e.target.value ).indexOf( '@' );  
 
 		// ^ Gets the current value of the '@' symbol.	
@@ -31,17 +30,23 @@ handleChange: function(e){
 
 		// ^ Checks the trimmed query for spaces.
 
+	// if ( newTargetValue.length < 2 ) {
+
+	// 	document.getElementById('Results').innerHTML = " "
+
+	// }
+
 	if( ( e.target.value ).indexOf( '@' ) === -1 ) { return false }
-		
+
 		// ^ If the '@' symbol is not present in the input, don't send the request.
 
-	else if ( spaceIndex === -1 && atIndex > -1 && newTargetValue.length >= 2 ){   
+	else if ( spaceIndex === -1 && atIndex > -1 && newTargetValue.length >= 2 ){  
 	 
 		// The 'else if'  statement above checks for 3 things:	
 		 	
 		  // Checks if there are no spaces in the query 
 		  // Checks if the '@' symbol is present in the input
-		  // Checks that the text that follows the '@' symbol is at least 2 characters in length.
+		  // Checks that the text that follows the '@' symbol is at least 2 characters in length
 	
 		
 		console.log('newTargetValue', atIndex)
@@ -62,26 +67,44 @@ handleChange: function(e){
 	},
 
 
+
 render: function() {
 	
-	function mapInfo (item) {return item.name}
-	
-	if( this.state.userInfo !== null ){
-		
-		document.getElementById('Results').innerHTML = this.state.userInfo.map(mapInfo) }
-	    
+	var userData = this.state.userInfo
+	var userInfoList = [];
+	if ( userData !== null ) {
+    
+	userData.map(function(element, index){
+	  	return (
+	  		userInfoList.push(
+	  			(<div>
+	  				<img className='UserImage' src={element.profile_image_url}></img> &nbsp; 
+	  				<img className='TweetyBird' src='https://g.twimg.com/blog/s200/twitter-bird.png'></img>
+	  				@{element.screen_name} &nbsp; 
+	  				{element.name}
+	  				<br /> 
+	  				<br /> 
+	  			</div>
+	  				)
+	  			)
+	  		)
+ 		}		
+	)}
+
+
+
 	    return (
 
-	      <div>
+	      <div className='Application'>
 
-	      	<div>
+	      	<div> 
 
-	      		<input onChange={this.handleChange}></input>
+	      		<input id ='SearchInput'onChange={this.handleChange}></input>
 
 	      	</div>
-	      
-	      	<div id='Results'>Here-></div>
-	      
+	      		<br />
+	      	<div id='Results'>{userInfoList}</div>
+	      	
 	      </div>
 	      
 	     
@@ -91,9 +114,6 @@ render: function() {
 });
 
 module.exports = ComposeTweet;
-
-
-
 
 
 
