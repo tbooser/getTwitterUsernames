@@ -30,12 +30,6 @@ handleChange: function(e){
 
 		// ^ Checks the trimmed query for spaces.
 
-	// if ( newTargetValue.length < 2 ) {
-
-	// 	document.getElementById('Results').innerHTML = " "
-
-	// }
-
 	if( ( e.target.value ).indexOf( '@' ) === -1 ) { return false }
 
 		// ^ If the '@' symbol is not present in the input, don't send the request.
@@ -48,9 +42,6 @@ handleChange: function(e){
 		  // Checks if the '@' symbol is present in the input
 		  // Checks that the text that follows the '@' symbol is at least 2 characters in length
 	
-		
-		console.log('newTargetValue', atIndex)
-
 	var promise = Model.getUserInfo(newTargetValue)
 	
 	promise.then( (response) => {
@@ -69,11 +60,13 @@ handleChange: function(e){
 
 
 render: function() {
-	
+
 	var userData = this.state.userInfo
+
 	var userInfoList = [];
+	
 	if ( userData !== null ) {
-    
+	
 	userData.map(function(element, index){
 	  	return (
 	  		userInfoList.push(
@@ -91,23 +84,19 @@ render: function() {
  		}		
 	)}
 
+	
 
+	return (
 
-	    return (
-
-	      <div className='Application'>
-
-	      	<div> 
-
-	      		<input id ='SearchInput'onChange={this.handleChange}></input>
-
+	    <div className='Application'>
+			<div> 
+				<input id ='SearchInput'onChange={this.handleChange}></input>
 	      	</div>
-	      		<br />
-	      	<div id='Results'>{userInfoList}</div>
-	      	
-	      </div>
+				<br />
+	      	<div id='Results'>{userInfoList}
+	      	</div>	
+	    </div>
 	      
-	     
 	    );
 	}
 

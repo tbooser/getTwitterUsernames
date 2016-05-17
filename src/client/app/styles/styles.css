@@ -4,10 +4,9 @@
 */
 
 #SearchInput {
-	text-align: center;
 	display: block;
 	width: 20%;
-	height: 20%;
+	height: auto;
 	margin: 0 auto;
 }
 
