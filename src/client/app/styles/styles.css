@@ -1,13 +1,7 @@
-/*.Application {
-	background-color: #00aced;
-}
-*/
-
-#SearchInput {
-	display: block;
-	width: 20%;
-	height: auto;
-	margin: 0 auto;
+.display_box_hover, .display_box:hover
+{
+  background:#3b5998;
+  color:#FFFFFF;
 }
 
 #Results {
@@ -18,16 +12,19 @@
 	font-family: 'Helvetica Neue'
 }
 
+#SearchInput {
+	display: block;
+	width: 20%;
+	height: auto;
+	margin: 0 auto;
+}
+
 #SingleUserDiv {
-	width: 40%;
+	width: 50%;
 	margin: 0 auto;
 	display: block;
 }
 
-.TweetyBird {
-	width: 3%;
-	height: 4%;
-}
 
 .UserImage {
 	background-repeat: no-repeat;
@@ -40,10 +37,4 @@
 .UserScreenName {
 	display: inline;
 	color: #9E9E98;
-}
-
-.display_box_hover, .display_box:hover
-{
-  background:#3b5998;
-  color:#FFFFFF;
 }

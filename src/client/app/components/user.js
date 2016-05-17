@@ -1,18 +1,26 @@
 var React = require('react')
 var UserModel = require('../model/userInfoModel.js')
 var DataRequest = require('../requests/request.js')
-var KeyNavigation = require('./keyNavigation.js')
+var KeyNavigation = require('./makeSelection.js')
 
 var User = React.createClass({
 
     componentWillMount: function(){
+
         this.props.model.on("change", (function() {
           this.forceUpdate();
         }.bind(this)));
+
+        // This is an event listener for the backbone model that tells React to re-render.
+
     },
 
     componentDidMount: function(){
+
         window.addEventListener('keydown', KeyNavigation.handleKeyEvents)
+
+        // This handles interactions with the search results.
+
     },
 
     render: function() {
@@ -28,9 +36,11 @@ var User = React.createClass({
             return (
                 userInfoList.push(
                     (<div id='SingleUserDiv'>
+                        
                         <img className='UserImage' src={element.profile_image_url}></img> &nbsp; 
-                        <img className='TweetyBird' src='https://g.twimg.com/blog/s200/twitter-bird.png'></img>
+                        
                         {element.name} &nbsp;
+                        
                         <div className='UserScreenName'>@{element.screen_name} </div> 
                         <br /> 
                         <br /> 
@@ -61,6 +71,8 @@ var User = React.createClass({
 
     handleChange: function(e){
         
+    // This handleChange function does several checks in the input box to make sure requirements are met before making a request.    
+
         var p = this.props;
         
         var atIndex = ( e.target.value ).indexOf( '@' );  
@@ -89,11 +101,11 @@ var User = React.createClass({
                 
               // Checks if there are no spaces in the query 
               // Checks if the '@' symbol is present in the input
-              // Checks that the text that follows the '@' symbol is at least 2 characters in length
+              // Checks that the query text that follows the '@' symbol is at least 2 characters in length
 
         document.getElementById('Results').style.display = 'block'
 
-            // ^ Makes the reccomendations visible again     
+            // ^ Makes the reccomendations visible again if they were hidden due to the query length being less than 2    
         
         var promise = DataRequest.getUserInfo(newTargetValue)
         

@@ -12,13 +12,8 @@ if (process.env.NODE_ENV !== 'test') {
   })
 
 
-var config = {
-    "consumerKey": process.env.consumerKey,
-    "consumerSecret": process.env.consumerSecret,
-    "accessToken": process.env.accessToken,
-    "accessTokenSecret": process.env.accessTokenSecret,
-    "callBackUrl": process.env.callBackUrl 
-}
+
+
 
 
 var Twitter = require('twitter-node-client').Twitter;

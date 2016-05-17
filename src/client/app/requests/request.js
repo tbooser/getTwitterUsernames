@@ -14,7 +14,6 @@ exports.getUserInfo = function(searchTerm) {
   })
 
   .then(function(searchResult){
-  	console.log('Response Status ----> ', searchResult)
     return searchResult.json()
   })
 
