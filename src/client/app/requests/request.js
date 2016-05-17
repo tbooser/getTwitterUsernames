@@ -1,4 +1,4 @@
-require('../request-helpers.js'); // Headers
+require('./request-helpers.js'); // Headers
 
 
 exports.getUserInfo = function(searchTerm) {
@@ -14,12 +14,12 @@ exports.getUserInfo = function(searchTerm) {
   })
 
   .then(function(searchResult){
-  	console.log('Response ----> ', searchResult)
+  	console.log('Response Status ----> ', searchResult)
     return searchResult.json()
   })
 
   .then( function(response) {
-  	  console.log('Response ----> ', response)
+  	  console.log('Response Content ----> ', response)
       return response;
     })
 
