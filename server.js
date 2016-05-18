@@ -1,7 +1,7 @@
 var express = require('express');
 var Path = require('path');
 var routes = express.Router();
-
+var webpack = require('webpack');
 
 
 
@@ -94,7 +94,7 @@ routes.post('/lookup', function(req, res){
   app.use(
     require('webpack-dev-middleware')(compiler, {
       noInfo: true,
-      publicPath: config.output.publicPath
+      publicPath: config.output.path
    }));
    
   app.use(require('webpack-hot-middleware')(compiler));
