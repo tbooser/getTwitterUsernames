@@ -15,8 +15,6 @@ if (process.env.NODE_ENV !== 'test') {
 
 
 
-console.log('DIRNAME : ', assetFolder)
-
 var config = {
     "consumerKey": process.env.consumerKey,
     "consumerSecret": process.env.consumerSecret,
