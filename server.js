@@ -112,7 +112,7 @@ var assetFolder = Path.resolve(__dirname, './src/client/');
 
 if (process.env.NODE_ENV !== 'test') {
   routes.get('/*', function(req, res){
-    res.sendFile( assetFolder + '/public' )
+    res.sendFile( assetFolder + '/public/bundle.js' )
   })
 
 
