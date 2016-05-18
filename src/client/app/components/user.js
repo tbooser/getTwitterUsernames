@@ -62,7 +62,17 @@ var User = React.createClass({
                     )
                 )
             }       
-        )}
+        )
+
+
+    }
+
+
+
+
+
+
+
 
     
 
@@ -70,7 +80,7 @@ var User = React.createClass({
         <div>
             <div id='AppContainer'> 
                 <input id ='SearchInput'onChange={ this.handleChange }></input>
-                </div>
+            </div>
             <br />
             <div>
                 <div id='Results'>{ userInfoList }</div>  
@@ -134,4 +144,3 @@ var User = React.createClass({
 });
 
 module.exports = User;     
-            

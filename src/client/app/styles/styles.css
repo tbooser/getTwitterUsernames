@@ -14,9 +14,14 @@
 
 #SearchInput {
 	display: block;
-	width: 20%;
 	height: auto;
 	margin: 0 auto;
+	width: 50%;
+	height: 20%;
+    padding: 0.5em 0.5em;
+    font-size: 1.2em;
+    border-radius: 3px;
+    border: 1px solid #D9D9D9;
 }
 
 #SingleUserDiv {
@@ -34,7 +39,13 @@
     height: 50px;
 }
 
+
 .UserScreenName {
 	display: inline;
 	color: #9E9E98;
+}
+
+.UserScreenName:hover {
+	cursor: hand;
+	color: #f5f5f0;
 }

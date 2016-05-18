@@ -33,6 +33,6 @@
     "webpack": "^1.13.0"
   },
   "devDependencies": {
-    "css-loader": "^0.23.1",
+    "css-loader": "^0.23.1"
   }
 }
