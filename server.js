@@ -77,7 +77,7 @@ var assetFolder = Path.resolve(__dirname, '/src/client/public');
 
 if (process.env.NODE_ENV !== 'test') {
   routes.get('/*', function(req, res){
-    res.sendFile( assetFolder + '/index.html' )
+    res.sendFile( assetFolder + '/index.htmlg' )
   })
 
 

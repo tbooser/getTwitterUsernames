@@ -20,7 +20,7 @@ var config = {
   target: 'node',
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: '/bundle.js'
   },
   
 
