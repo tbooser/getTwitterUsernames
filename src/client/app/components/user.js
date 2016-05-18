@@ -27,24 +27,37 @@ var User = React.createClass({
 
         var p = this.props;
         var userData = p.model.get('userInfo')    //  < --- This accesses the data model 
-        var userInfoList = [];                    //  < --- Array to store the divs that the user info was mapped into.  This array is loaded below in the 'Results' div.
+        var userInfoList = [];                    
     
         if ( userData !== null && userData !== undefined ) {
         
-        
+        // The map function below dynamically creates divs with the user's name, screen name, and profile image.
+        // These divs are pushed into the userInfoList array, which is loaded in the 'Results' div.
+
         userData.map(function(element, index){
             return (
                 userInfoList.push(
+                    
                     (<div id='SingleUserDiv'>
                         
-                        <img className='UserImage' src={element.profile_image_url}></img> &nbsp; 
+                        <img className='UserImage' 
+                            src={element.profile_image_url}>
+                        </img> 
+
+                            &nbsp; 
                         
-                        {element.name} &nbsp;
+                        {element.name} 
+
+                            &nbsp;
                         
-                        <div className='UserScreenName'>@{element.screen_name} </div> 
+                        <div className='UserScreenName'>
+                            @{element.screen_name} 
+                        </div> 
+
                         <br /> 
                         <br /> 
                     </div>
+
                         )
                     )
                 )
@@ -70,11 +83,10 @@ var User = React.createClass({
     
 
     handleChange: function(e){
-        
-    // This handleChange function does several checks in the input box to make sure requirements are met before making a request.    
+   
+    // Whenever the value of 'SearchInput' changes, this function is called. 
+    // The function does several checks in the input box to make sure requirements are met before making a request.    
 
-        var p = this.props;
-        
         var atIndex = ( e.target.value ).indexOf( '@' );  
 
             // ^ Gets the current index of the '@' symbol.  
@@ -111,7 +123,7 @@ var User = React.createClass({
         
         promise.then( (response) => {
 
-            p.model.set({'userInfo': response});            // < --- This updates the data model
+           this.props.model.set({'userInfo': response});            // < --- This updates the data model
 
                 })
 

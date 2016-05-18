@@ -5,8 +5,6 @@ exports.getUserInfo = function(searchTerm) {
   
   var formattedSearch = { 'q': searchTerm }
   
-  console.log('Request body ---->  ', formattedSearch)
-  
   return fetch('lookup/', {
     method: 'POST',
     headers: requestHeaders,
@@ -18,7 +16,6 @@ exports.getUserInfo = function(searchTerm) {
   })
 
   .then( function(response) {
-  	  console.log('Response Content ----> ', response)
       return response;
     })
 

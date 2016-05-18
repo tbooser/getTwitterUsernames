@@ -14,8 +14,6 @@ if (process.env.NODE_ENV !== 'test') {
 
 
 
-
-
 var Twitter = require('twitter-node-client').Twitter;
 
 var twitter = new Twitter(config);

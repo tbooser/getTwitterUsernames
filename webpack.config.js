@@ -34,9 +34,8 @@ var config = {
         loaders: [ 'babel?presets[]=react,presets[]=es2015']
       },
       
-       { test: /\.css$/, loader: "style-loader!css-loader" },
-      { test: /\.png$/, loader: "url-loader?limit=100000" },
-      { test: /\.jpg$/, loader: "file-loader" },
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.jpg$/, loader: "file-loader" }
 
     ]
   },
