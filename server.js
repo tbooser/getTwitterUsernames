@@ -102,7 +102,7 @@ var app = express();
       publicPath: wpConfig.output.path
    }));
    
-  app.use(require('webpack-hot-middleware')(compiler));
+
 
 
 
