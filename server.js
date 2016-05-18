@@ -5,6 +5,23 @@ var webpack = require('webpack');
 
 
 
+
+
+
+//Route to index.html
+var assetFolder = Path.resolve(__dirname, './src/client/');
+  routes.use(express.static(assetFolder));
+
+if (process.env.NODE_ENV !== 'test') {
+  routes.get('/*', function(req, res){
+    res.sendFile( assetFolder + '/public/bundle.js' )
+  })
+
+
+
+
+
+
 var config = {
     "consumerKey": process.env.consumerKey,
     "consumerSecret": process.env.consumerSecret,
@@ -104,16 +121,6 @@ var app = express();
    
 
 
-
-
-//Route to index.html
-var assetFolder = Path.resolve(__dirname, './src/client/');
-  routes.use(express.static(assetFolder));
-
-if (process.env.NODE_ENV !== 'test') {
-  routes.get('/*', function(req, res){
-    res.sendFile( assetFolder + '/public/bundle.js' )
-  })
 
 
 
