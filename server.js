@@ -3,14 +3,22 @@ var Path = require('path');
 var routes = express.Router();
 
 //Route to index.html
-var assetFolder = Path.resolve(__dirname, '/src/client/public');
-  routes.use(express.static(assetFolder));
+// var assetFolder = Path.resolve(__dirname, '/src/client/public');
+//   routes.use(express.static(assetFolder));
 
-if (process.env.NODE_ENV !== 'test') {
-  routes.get('/*', function(req, res){
-    res.sendFile( assetFolder + '/index.html' )
-  })
+// if (process.env.NODE_ENV !== 'test') {
+//   routes.get('/*', function(req, res){
+//     res.sendFile( assetFolder + '/index.html' )
+//   })
 
+
+
+routes.get('/', function (req, res) {
+  res.sendFile(path.join( __dirname + 'src/client/public/index.html' ));
+});
+
+
+console.log('DIRNAME : ', assetFolder)
 
 var config = {
     "consumerKey": process.env.consumerKey,
