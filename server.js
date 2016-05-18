@@ -3,7 +3,7 @@ var Path = require('path');
 var routes = express.Router();
 
 //Route to index.html
-var assetFolder = Path.resolve(__dirname, './src/client/');
+var assetFolder = Path.resolve(__dirname, './src/client/public');
   routes.use(express.static(assetFolder));
 
 if (process.env.NODE_ENV !== 'test') {
