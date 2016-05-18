@@ -3,17 +3,13 @@ var Path = require('path');
 var routes = express.Router();
 
 //Route to index.html
-var assetFolder = Path.resolve(__dirname, './src/client/public');
+var assetFolder = Path.resolve(__dirname, './src/client/');
   routes.use(express.static(assetFolder));
 
 if (process.env.NODE_ENV !== 'test') {
   routes.get('/*', function(req, res){
-   res.sendFile(Path.join( __dirname + './src/client/public' ));
+    res.sendFile( assetFolder + '/public' )
   })
-
-
-
-
 
 
 var config = {
