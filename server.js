@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'test') {
   routes.get('/*', function(req, res){
     res.sendFile( assetFolder + '/index.html' )
   })
-
+  
 
 var config = {
     "consumerKey": process.env.consumerKey,
