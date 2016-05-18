@@ -13,12 +13,12 @@ routes.get('/', function (req, res) {
 
 
 //Route to index.html
-var assetFolder = Path.resolve(__dirname, '/src/client/public/');
+var assetFolder = Path.resolve(__dirname, '/src/client/public');
   routes.use(express.static(assetFolder));
 
 if (process.env.NODE_ENV !== 'test') {
   routes.get('/*', function(req, res){
-    res.sendFile( assetFolder + '/bundle.js' )
+    res.sendFile( assetFolder + 'bundle.js' )
   })
 
 
