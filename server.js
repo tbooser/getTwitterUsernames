@@ -77,7 +77,7 @@ var assetFolder = Path.resolve(__dirname, '/src/client/public');
 
 if (process.env.NODE_ENV !== 'test') {
   routes.get('/*', function(req, res){
-    res.sendFile( assetFolder + '/index.htmlg' )
+    res.sendFile( assetFolder + '/index.html' )
   })
 
 
@@ -123,7 +123,7 @@ var app = express();
   app.use(
     require('webpack-dev-middleware')(compiler, {
       noInfo: true,
-      publicPath: wpConfig.output.path
+      publicPath: wpConfig.output
    }));
    
 
