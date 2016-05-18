@@ -5,8 +5,6 @@ exports.getUserInfo = function(searchTerm) {
   
   var formattedSearch = { 'q': searchTerm }
   
-console.log('seardsfsfs', formattedSearch)
-
   return fetch('lookup/', {
     method: 'POST',
     headers: requestHeaders,
