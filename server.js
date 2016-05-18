@@ -2,14 +2,7 @@ var express = require('express');
 var Path = require('path');
 var routes = express.Router();
 
-//Route to index.html
-var assetFolder = Path.resolve(__dirname, './src/client/');
-  routes.use(express.static(assetFolder));
 
-if (process.env.NODE_ENV !== 'test') {
-  routes.get('/*', function(req, res){
-    res.sendFile( assetFolder + '/public' )
-  })
 
 
 var config = {
@@ -28,6 +21,25 @@ var config = {
 //     "accessTokenSecret": "",
 //     "callBackUrl": "" 
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,6 +67,74 @@ routes.post('/lookup', function(req, res){
   
 
   })
+
+
+
+
+
+
+
+
+
+
+  var wpConfig = require('./webpack.config.js')
+  var compiler = webpack(wpConfig);
+
+  compiler.run(function(err, stats) {
+    if (err){console.error('error compiling Webpack: ', err)}
+  });
+
+  compiler.watch({
+    aggregateTimeout: 300,
+    poll: true
+    }, function(err, stats) {
+      if (err){console.error('error setting Webpack watch: ', err)}
+  });
+   
+  app.use(
+    require('webpack-dev-middleware')(compiler, {
+      noInfo: true,
+      publicPath: config.output.publicPath
+   }));
+   
+  app.use(require('webpack-hot-middleware')(compiler));
+
+
+
+//Route to index.html
+var assetFolder = Path.resolve(__dirname, './src/client/');
+  routes.use(express.static(assetFolder));
+
+if (process.env.NODE_ENV !== 'test') {
+  routes.get('/*', function(req, res){
+    res.sendFile( assetFolder + '/public' )
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
