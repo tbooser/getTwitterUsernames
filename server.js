@@ -27,24 +27,6 @@ var config = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var Twitter = require('twitter-node-client').Twitter;
 
 var twitter = new Twitter(config);
@@ -67,6 +49,29 @@ routes.post('/lookup', function(req, res){
   
 
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+var app = express();
+  app.use( require('body-parser').json() )
+  app.use('/', routes);
+
+
+
+
+
+
+
 
 
 
@@ -138,10 +143,6 @@ if (process.env.NODE_ENV !== 'test') {
 
 
 
-
-var app = express();
-  app.use( require('body-parser').json() )
-  app.use('/', routes);
 
 
 
