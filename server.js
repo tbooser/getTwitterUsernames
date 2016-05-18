@@ -99,7 +99,7 @@ var app = express();
   app.use(
     require('webpack-dev-middleware')(compiler, {
       noInfo: true,
-      publicPath: config.output.path
+      publicPath: wpConfig.output.path
    }));
    
   app.use(require('webpack-hot-middleware')(compiler));
