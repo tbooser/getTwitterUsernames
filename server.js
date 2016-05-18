@@ -1,20 +1,15 @@
 var express = require('express');
 var Path = require('path');
 var routes = express.Router();
-var webpack = require('webpack');
 
+//Route to index.html
+var assetFolder = Path.resolve(__dirname, './src/client/');
+  routes.use(express.static(assetFolder));
 
-
-routes.get('/', function (req, res) {
-  res.sendFile(Path.join( __dirname + '/src/client/public/index.html' ));
-});
-
-
-
-
-
-
-
+if (process.env.NODE_ENV !== 'test') {
+  routes.get('/*', function(req, res){
+    res.sendFile( assetFolder + '/index.html' )
+  })
 
 
 var config = {
@@ -33,7 +28,6 @@ var config = {
 //     "accessTokenSecret": "",
 //     "callBackUrl": "" 
 // }
-
 
 
 
@@ -65,98 +59,9 @@ routes.post('/lookup', function(req, res){
 
 
 
-
-
-
-
-
-
-//Route to index.html
-var assetFolder = Path.resolve(__dirname, '/src/client/public');
-  routes.use(express.static(assetFolder));
-
-if (process.env.NODE_ENV !== 'test') {
-  routes.get('/*', function(req, res){
-    res.sendFile( assetFolder + '/index.html' )
-  })
-
-
-
-
-
-
-
 var app = express();
   app.use( require('body-parser').json() )
   app.use('/', routes);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  var wpConfig = require('./webpack.config.js')
-  var compiler = webpack(wpConfig);
-
-  compiler.run(function(err, stats) {
-    if (err){console.error('error compiling Webpack: ', err)}
-  });
-
-  compiler.watch({
-    aggregateTimeout: 300,
-    poll: true
-    }, function(err, stats) {
-      if (err){console.error('error setting Webpack watch: ', err)}
-  });
-   
-  app.use(
-    require('webpack-dev-middleware')(compiler, {
-      noInfo: true,
-      publicPath: wpConfig.output
-   }));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
