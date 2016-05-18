@@ -8,7 +8,7 @@ var assetFolder = Path.resolve(__dirname, './src/client/public');
 
 if (process.env.NODE_ENV !== 'test') {
   routes.get('/*', function(req, res){
-   res.sendFile(path.join( __dirname + './src/client/public/' ));
+   res.sendFile(Path.join( __dirname + './src/client/public/' ));
   })
 
 
