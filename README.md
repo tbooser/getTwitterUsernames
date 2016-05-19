@@ -1,5 +1,9 @@
 # getTwitterUsernames
 
+	gif demo - 
+
+	http://g.recordit.co/3DQ0kwT2PH.gif
+
 # Setup
 
 	- npm install

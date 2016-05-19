@@ -3,25 +3,14 @@ var Path = require('path');
 var routes = express.Router();
 
 //Route to index.html
-// var assetFolder = Path.resolve(__dirname, '/src/client/public');
-//   routes.use(express.static(assetFolder));
+var assetFolder = Path.resolve(__dirname, './src/client/');
+  routes.use(express.static(assetFolder));
 
 if (process.env.NODE_ENV !== 'test') {
-  
-  routes.get('/', function (req, res) {
-    res.sendFile(Path.join( __dirname + 'src/client/public/index.html' ));
-  });
+  routes.get('/*', function(req, res){
+    res.sendFile( assetFolder + '/index.html' )
+  })
 
-
-
-
-var config = {
-    "consumerKey": process.env.consumerKey,
-    "consumerSecret": process.env.consumerSecret,
-    "accessToken": process.env.accessToken,
-    "accessTokenSecret": process.env.accessTokenSecret,
-    "callBackUrl": process.env.callBackUrl 
-}
 
 
 // var config = {
@@ -29,7 +18,7 @@ var config = {
 //     "consumerSecret": "",
 //     "accessToken": "",
 //     "accessTokenSecret": "",
-//     "callBackUrl": "" 
+//     "callBackUrl": "localhost" 
 // }
 
 
@@ -80,3 +69,4 @@ module.exports = app;
   module.exports = routes;
 
 };
+
