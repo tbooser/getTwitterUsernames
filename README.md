@@ -1,8 +1,8 @@
 # getTwitterUsernames
 
-	gif demo - 
+gif demo - 
 
-	http://g.recordit.co/mEQJwpyLyS.gif
+http://g.recordit.co/mEQJwpyLyS.gif
 
 # Setup
 
