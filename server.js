@@ -13,15 +13,14 @@ if (process.env.NODE_ENV !== 'test') {
 
 
 
-// var config = {
-//     "consumerKey": "",
-//     "consumerSecret": "",
-//     "accessToken": "",
-//     "accessTokenSecret": "",
-//     "callBackUrl": "localhost" 
-// }
 
-
+var config = {
+    "consumerKey":  "",
+    "consumerSecret": "",
+    "accessToken":  "",
+    "accessTokenSecret": "",
+    "callBackUrl": "localhost" 
+}
 
 
 
