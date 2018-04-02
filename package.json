@@ -32,6 +32,9 @@
     "twitter-node-client": "0.0.6",
     "webpack": "^1.13.0",
     "css-loader": "^0.23.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5"
   }
-
 }
