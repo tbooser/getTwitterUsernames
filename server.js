@@ -13,10 +13,10 @@ if (process.env.NODE_ENV !== "test") {
   });
 
   var config = {
-    consumerKey: "dLaow9LH2naJsoyudyhMdBYTl",
-    consumerSecret: "MwAjkERXHF6uRUnCzmlCRHUBkaGKdPXR3Wq8kHLisgDSUCiKzX",
-    accessToken: "594219134-xxQfKJ4fDtyYIoOAM325uZ2soQWRFStn3aiTw1i6",
-    accessTokenSecret: "82Ua2geUUxlxi5qnDTg3c821OeaY9Y2QqsMHxiTVZNXTb",
+    consumerKey: "",
+    consumerSecret: "",
+    accessToken: "",
+    accessTokenSecret: "",
     callBackUrl: "localhost"
   };
 
